@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion'
 import TechSticker from '../components/TechSticker'
+import { Button } from "@/components/ui/button"
+import { ExternalLink } from 'lucide-react'
 
 const projects = [
   {
@@ -10,11 +12,12 @@ const projects = [
     tech: [
       { name: 'HTML', color: 'bg-orange-500 text-white' },
       { name: 'CSS', color: 'bg-blue-400 text-white' },
-      { name: 'JavaScript', color: 'bg-yellow-400 text-black' },
+      { name: 'React', color: 'bg-yellow-400 text-black' },
       { name: 'Express.js', color: 'bg-gray-700 text-white' },
       { name: 'Node.js', color: 'bg-green-500 text-white' },
       { name: 'MongoDB', color: 'bg-green-600 text-white' },
-    ]
+    ],
+    link: 'https://weatherremainder.gobidev.site'
   },
   {
     name: 'Diffusion Analysis in Data Science',
@@ -87,11 +90,29 @@ export default function Projects() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: index * 0.2 + 0.6 }}
+                className="flex flex-wrap gap-2 mb-4"
               >
                 {project.tech.map((tech) => (
                   <TechSticker key={tech.name} name={tech.name} color={tech.color} />
                 ))}
               </motion.div>
+              {project.link && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: index * 0.2 + 0.8 }}
+                >
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white"
+                    onClick={() => window.open(project.link, '_blank')}
+                  >
+                    Visit Project
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </Button>
+                </motion.div>
+              )}
             </motion.div>
           ))}
         </div>
