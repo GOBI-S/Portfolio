@@ -71,7 +71,7 @@ export default function Contact() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Contact by email"
-            className="w-full p-2 border border-gray-300 rounded-md"
+            className="w-full p-2 border bg-transparent border-gray-300 rounded-md"
             rows={4}
           />
           <motion.button
