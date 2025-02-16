@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import TechSticker from '../components/TechSticker'
 import { Button } from "@/components/ui/button"
 import { ExternalLink } from 'lucide-react'
+import { link } from 'fs'
 
 const projects = [
   {
@@ -30,7 +31,7 @@ const projects = [
   },
   {
     name: 'Room Rent Web App',
-    description: 'Currently developing a full-fledged website for room rentals with separate profiles for owners and users.',
+    description: 'Developed a web application that allows users to post rooms for rent and search for rooms to rent. it is resposive for all devices and has a user-friendly interface.',
     tech: [
       { name: 'Node.js', color: 'bg-green-500 text-white' },
       { name: 'MongoDB', color: 'bg-green-600 text-white' },
@@ -39,7 +40,8 @@ const projects = [
       { name: 'Tailwind CSS', color: 'bg-teal-400 text-white' },
       { name: 'Express.js', color: 'bg-gray-700 text-white' },
       { name: 'TypeScript', color: 'bg-blue-600 text-white' },
-    ]
+    ],
+    link: 'https://roomrentwebmern.gobidev.site/'
   }
 ]
 
